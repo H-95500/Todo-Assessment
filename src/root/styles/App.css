@@ -1,0 +1,108 @@
+
+
+body {
+  background-color: lightblue;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  padding-top: 20px;
+}
+h1 {
+  text-align: center;
+  color: #0e95f0;
+  font-weight: 300;
+  padding-right: 17px;
+  padding-top: 10px;
+}
+
+h5{
+
+  color: rgb(228, 132, 22);
+  padding-bottom: 1rem;
+  margin-left: 23rem;
+  padding-top: 1.5rem;
+
+}
+
+h4 {
+  color: rgb(228, 132, 22);
+  padding-bottom: 1rem;
+  margin-left: 23rem;
+}
+
+input {
+  min-height: 50px;
+  min-width: 50px;
+  text-align: center;
+  height: 50px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 500;
+  width: 20%;
+  align-items: center;
+  border : 0.5px solid #8566;
+  margin-left: 23rem !important ;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  
+}
+
+Button {
+  align-items: center;
+  min-height: 50px;
+  width: 80px;
+  border-radius: 8%;
+  border-color: transparent;
+  background-color: #0c4fa7;
+  color: #ffff;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  
+  text-align: center;
+}
+
+.item {
+
+  width: 350px;
+  padding-left: 0px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  min-height: 40px;
+  display: flex;
+  color: #2e2b31;
+  text-transform: capitalize;
+  border-bottom: 2px solid grey;
+  border-top: 2px solid grey;
+  border-left: 2px solid grey;
+  border-right: 2px solid grey;
+  /* border-radius: 8px; */
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 23rem;
+}
+
+.editdel{
+  float: left;
+  text-align: right;
+  padding-right: 5px;
+  nav-right: auto; 
+}
+
+.actions{
+text-align: right;
+align-items: right;
+
+}
+
+ol, ul {
+  padding-left: 2rem;
+  padding-top: 1rem;
+}
