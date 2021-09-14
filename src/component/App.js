@@ -13,9 +13,9 @@ class App extends React.Component {
     };
 
    
-    // this.addItem = this.addItem.bind(this);
-    // this.deleteItem = this.deleteItem.bind(this);
-    // this.saveItem = this.saveItem.bind(this);
+    this.addItem = this.addItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
+    this.saveItem = this.saveItem.bind(this);
 
   }
   addItem(item) {
@@ -50,13 +50,13 @@ class App extends React.Component {
           <br />
           <h4> Please Enter Items</h4>
         </div>
-        <AddTodo data={this.state.data} addItem={this.addItem.bind(this)} />
+        <AddTodo data={this.state.data} addItem={this.addItem} />
         <br />
         <br />
         
         <h5> Displaying Item List</h5>
 
-        <TodoList data={this.state.data} deleteItem={this.deleteItem.bind(this)} saveItem={this.saveItem.bind(this)}
+        <TodoList data={this.state.data} deleteItem={this.deleteItem} saveItem={this.saveItem}
         />
       </div>
     );
