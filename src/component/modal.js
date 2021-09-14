@@ -17,6 +17,35 @@ class Edit extends React.Component {
       </ul>
     );
   }
+
+  onEditClick() {
+    this.setState({ editing: true });
+  }
+  onCancelClick() {
+    this.setState({ editing: false });
+  }
+  onSaveClick(e) {
+    e.preventDefault();
+    this.props.saveItem(this.props.task, this.state.editInput);
+    this.setState({
+      show: !this.state.show,
+      editing: false
+    });
+  }
+  handleOnChange(e) {
+    this.setState({
+      editInput: e.target.value
+    });
+  }
+  handleModal() {
+    this.setState({ show: !this.state.show })
+  }
+  handleEdit() {
+    this.onEditClick();
+    this.handleModal();
+
+  }
+
   renderButtons() {
     return (
       <div className="todobutton">
@@ -51,33 +80,7 @@ class Edit extends React.Component {
       </div>
     );
   }
-  onEditClick() {
-    this.setState({ editing: true });
-  }
-  onCancelClick() {
-    this.setState({ editing: false });
-  }
-  onSaveClick(e) {
-    e.preventDefault();
-    this.props.saveItem(this.props.task, this.state.editInput);
-    this.setState({
-      show: !this.state.show,
-      editing: false
-    });
-  }
-  handleOnChange(e) {
-    this.setState({
-      editInput: e.target.value
-    });
-  }
-  handleModal() {
-    this.setState({ show: !this.state.show })
-  }
-  handleEdit() {
-    this.onEditClick();
-    this.handleModal();
 
-  }
   render() {
     return (
       <div className="item">
