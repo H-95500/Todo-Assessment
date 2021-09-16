@@ -41,7 +41,7 @@ class Edit extends React.Component {
     this.setState({ show: !this.state.show })
   }
   handleEdit() {
-    this.onEditClick();
+    // this.onEditClick();
     this.handleModal();
 
   }

@@ -26,10 +26,13 @@ class App extends React.Component {
       data: this.state.data
     });
   }
+
+ 
   
   findItem(item) {
      
     return this.state.data.find((element) => element.task === item) 
+    
   }
   
   saveItem(oldItem, newItem) {

@@ -14,11 +14,14 @@ class AddTodo extends React.Component {
 
   handleOnCreate(e) {
     e.preventDefault();
-    Promise.resolve(this.props.addItem(this.state.newInputItem)).then(() => {
+    const newItem = this.state.newInputItem;
+    if (newItem !== '') {
+      console.log(this.state.newInputItem)
+      this.props.addItem(this.state.newInputItem)
       this.setState({
         newInputItem: ''
       });
-    });
+    }
   }
 
   handleOnChange(e) {
@@ -30,12 +33,12 @@ class AddTodo extends React.Component {
   render() {
     return (
       <div className="textField">
-         <input type="text" placeholder="Enter Item" value={this.state.newInputItem} onChange={(e) => { this.handleOnChange(e) }} />
-         <button
+        <input type="text" placeholder="Enter Item" value={this.state.newInputItem} onChange={(e) => { this.handleOnChange(e) }} />
+        <button
           onClick={(e) => { this.handleOnCreate(e) }} >
-             AddItem
-          </button>
-    </div>
+          AddItem
+        </button>
+      </div>
 
     );
   }
