@@ -3,7 +3,7 @@ import React from 'react';
 import styles from '../root/styles/App.css'
 import AddTodo from './Addtodo'
 import TodoList from './List'
-
+import data from '../mock/MockData'
 
 class App extends React.Component {
   constructor(props) {
@@ -51,13 +51,13 @@ class App extends React.Component {
         <div className="header">
           <h1> My Todo List</h1>
           <br />
-          <h4> Please Enter Items</h4>
+          <h4>{this.props.Content.text}</h4>
         </div>
         <AddTodo data={this.state.data} addItem={this.addItem} />
         <br />
         <br />
         
-        <h5> Displaying Item List</h5>
+        <h5> {this.props.Content.sub}</h5>
 
         <TodoList data={this.state.data} deleteItem={this.deleteItem} saveItem={this.saveItem}
         />
@@ -65,5 +65,8 @@ class App extends React.Component {
     );
   }
 }
-
+ 
+App.defaultProps = {
+  Content: data
+};
 export default App;

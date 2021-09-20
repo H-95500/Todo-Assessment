@@ -1,5 +1,8 @@
 
 import React from 'react';
+import data from '../mock/MockData'
+import Submit from './common/Button'
+import TodoInput from './common/InputField'
 
 class AddTodo extends React.Component {
   constructor(props) {
@@ -33,15 +36,21 @@ class AddTodo extends React.Component {
   render() {
     return (
       <div className="textField">
-        <input type="text" placeholder="Enter Item" value={this.state.newInputItem} onChange={(e) => { this.handleOnChange(e) }} />
-        <button
-          onClick={(e) => { this.handleOnCreate(e) }} >
-          AddItem
-        </button>
+       <TodoInput 
+          type="text"
+          placeholder={this.props.Content.placeholder}
+          value= {this.state.newInputItem}
+          handleOnChange={(e) => { this.handleOnChange(e) }} />
+        <Submit value={this.props.Content.addButton}
+          onClick={(e) => { this.handleOnCreate(e) }} />
       </div>
 
     );
   }
 }
+
+AddTodo.defaultProps = {
+  Content: data
+};
 
 export default AddTodo;

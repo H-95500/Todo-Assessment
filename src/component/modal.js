@@ -1,5 +1,8 @@
 import { Modal } from 'react-bootstrap';
 import React from 'react';
+import Submit from './common/Button'
+import data from '../mock/MockData'
+import TodoInput from './common/InputField'
 
 class Edit extends React.Component {
   constructor(props) {
@@ -52,29 +55,25 @@ class Edit extends React.Component {
         <span className="editdel">
           <li className="list-group-item text-capitalize d-flex justify-data-between ">
 
-            <button
-              onClick={() => this.handleEdit()} >
-              Edit
-            </button>
+          <Submit onClick={() => this.handleEdit()} value={this.props.Content.editButton} />
             <p></p>
 
-            <button
-              onClick={(this.props.deleteItem.bind(this, this.props.task))} >
-              Delete
-            </button>
+            <Submit onClick={(this.props.deleteItem.bind(this, this.props.task))} value={this.props.Content.delButton} />
           </li>
         </span>
         <Modal show={this.state.show} animation={true} onHide={() => this.handleModal()}>
           <Modal.Header>Edit Item</Modal.Header>
           <Modal.Body>
             <form onClick={this.onEditClick.bind(this)}>
-              <input type="text" placeholder="Enter Item" defaultValue={this.props.task}
-                onChange={(e) => { this.handleOnChange(e) }} />
+            <TodoInput type="text"
+                defaultValue={this.props.task}
+                handleOnChange={(e) => this.handleOnChange(e)}
+              />
             </form>
           </Modal.Body>
           <Modal.Footer>
-            <button onClick={this.onSaveClick.bind(this)}> Ok</button>
-            <button onClick={() => this.handleModal()}> Cancel </button>
+          <Submit onClick={this.onSaveClick.bind(this)} value={this.props.Content.saveButton} />
+            <Submit onClick={() => this.handleModal()} value={this.props.Content.cancelButton} />
           </Modal.Footer>
         </Modal>
       </div>
@@ -96,5 +95,9 @@ class Edit extends React.Component {
     );
   }
 }
+
+Edit.defaultProps = {
+  Content: data
+};
 
 export default Edit;
