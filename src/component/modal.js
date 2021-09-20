@@ -10,7 +10,6 @@ class Edit extends React.Component {
     this.state = {
       editing: false,
       show: false,
-
     };
   }
   renderName() {
@@ -46,7 +45,6 @@ class Edit extends React.Component {
   handleEdit() {
     // this.onEditClick();
     this.handleModal();
-
   }
 
   renderButtons() {
@@ -54,10 +52,7 @@ class Edit extends React.Component {
       <div className="todobutton">
         <span className="editdel">
           <li className="list-group-item text-capitalize d-flex justify-data-between ">
-
-          <Submit onClick={() => this.handleEdit()} value={this.props.Content.editButton} />
-            <p></p>
-
+            <Submit onClick={() => this.handleEdit()} value={this.props.Content.editButton} />
             <Submit onClick={(this.props.deleteItem.bind(this, this.props.task))} value={this.props.Content.delButton} />
           </li>
         </span>
@@ -65,14 +60,13 @@ class Edit extends React.Component {
           <Modal.Header>Edit Item</Modal.Header>
           <Modal.Body>
             <form onClick={this.onEditClick.bind(this)}>
-            <TodoInput type="text"
+              <TodoInput  type="text"
                 defaultValue={this.props.task}
-                handleOnChange={(e) => this.handleOnChange(e)}
-              />
+                handleOnChange={(e) => this.handleOnChange(e)} />
             </form>
           </Modal.Body>
           <Modal.Footer>
-          <Submit onClick={this.onSaveClick.bind(this)} value={this.props.Content.saveButton} />
+            <Submit onClick={this.onSaveClick.bind(this)} value={this.props.Content.saveButton} />
             <Submit onClick={() => this.handleModal()} value={this.props.Content.cancelButton} />
           </Modal.Footer>
         </Modal>

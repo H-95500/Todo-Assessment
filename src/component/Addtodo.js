@@ -36,10 +36,10 @@ class AddTodo extends React.Component {
   render() {
     return (
       <div className="textField">
-       <TodoInput 
+        <TodoInput
           type="text"
           placeholder={this.props.Content.placeholder}
-          value= {this.state.newInputItem}
+          value={this.state.newInputItem}
           handleOnChange={(e) => { this.handleOnChange(e) }} />
         <Submit value={this.props.Content.addButton}
           onClick={(e) => { this.handleOnCreate(e) }} />

@@ -12,12 +12,10 @@ class App extends React.Component {
       data: []
     };
 
-   
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
     this.saveItem = this.saveItem.bind(this);
-
-  }
+}
   addItem(item) {
     this.state.data.unshift({
       task: item
@@ -27,13 +25,9 @@ class App extends React.Component {
     });
   }
 
- 
-  
   findItem(item) {
-     
-    return this.state.data.find((element) => element.task === item) 
-    
-  }
+     return this.state.data.find((element) => element.task === item) 
+    }
   
   saveItem(oldItem, newItem) {
     let selectedItem = this.findItem(oldItem);
@@ -56,11 +50,8 @@ class App extends React.Component {
         <AddTodo data={this.state.data} addItem={this.addItem} />
         <br />
         <br />
-        
         <h5> {this.props.Content.sub}</h5>
-
-        <TodoList data={this.state.data} deleteItem={this.deleteItem} saveItem={this.saveItem}
-        />
+        <TodoList data={this.state.data} deleteItem={this.deleteItem} saveItem={this.saveItem}/>
       </div>
     );
   }
