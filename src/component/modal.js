@@ -57,7 +57,7 @@ class Edit extends React.Component {
           </li>
         </span>
         <Modal show={this.state.show} animation={true} onHide={() => this.handleModal()}>
-          <Modal.Header>Edit Item</Modal.Header>
+          <Modal.Header>{this.props.Content.modalPopup}</Modal.Header>
           <Modal.Body>
             <form onClick={this.onEditClick.bind(this)}>
               <TodoInput  type="text"
